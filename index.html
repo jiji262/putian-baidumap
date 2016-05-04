@@ -7,6 +7,7 @@
     <meta name="description" content="">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="cleartype" content="on">
 
@@ -7777,10 +7778,12 @@ map.addControl(new BMap.CityListControl({
     // }
 }));
 
+map.addControl(new BMap.NavigationControl({anchor: BMAP_ANCHOR_BOTTOM_RIGHT, type: BMAP_NAVIGATION_CONTROL_ZOOM}));
+
         function openInfo(content,e){
             var p = e.target;
                 var opts = {
-                    width : 200,     // 信息窗口宽度
+                    width : 160,     // 信息窗口宽度
                     height: 20,     // 信息窗口高度
                     title : "" , // 信息窗口标题
                     enableMessage:true//设置允许信息窗发送短息
