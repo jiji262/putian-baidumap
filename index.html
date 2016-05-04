@@ -7773,8 +7773,8 @@
            var marker = new BMap.Marker(pt);
 
            addClickHandler(geodata.features[i].properties.name,marker);
-           markers.push(marker);
-           //map.addOverlay(marker);   
+           //markers.push(marker);
+           map.addOverlay(marker);   
        }
 
        function addClickHandler(content,marker){
@@ -7783,6 +7783,6 @@
             );
         }
 
-       var markerClusterer = new BMapLib.MarkerClusterer(map, {markers:markers});
+       //var markerClusterer = new BMapLib.MarkerClusterer(map, {markers:markers});
     </script>
 </html>
