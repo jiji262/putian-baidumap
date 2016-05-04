@@ -13,7 +13,7 @@
 
     <style type="text/css">
         #mapDiv { height:95%; width:100%; margin:0px }
-        #github { height:5%;line-height:5%; width:100%; margin:0px;text-align:center; }
+        #github { height:5%; width:100%; margin:0px;text-align:center; }
         #github a{ color:green;font-weight:bold;text-decoration:none; }
     </style>
 
@@ -7759,7 +7759,7 @@
        var map = new BMap.Map("mapDiv");
        //map.enableScrollWheelZoom();
        var point = new BMap.Point(116.404, 39.915);
-       map.centerAndZoom(point, 6);      
+       map.centerAndZoom("上海", 6);      
        
        map.enableScrollWheelZoom();
 map.enableInertialDragging();
