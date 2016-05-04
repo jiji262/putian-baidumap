@@ -7751,6 +7751,21 @@
        //map.enableScrollWheelZoom();
        var point = new BMap.Point(116.404, 39.915);
        map.centerAndZoom(point, 6);       
+       
+       
+       var size = new BMap.Size(10, 20);
+map.addControl(new BMap.CityListControl({
+    anchor: BMAP_ANCHOR_TOP_LEFT,
+    offset: size,
+    // 切换城市之间事件
+    // onChangeBefore: function(){
+    //    alert('before');
+    // },
+    // 切换城市之后事件
+    // onChangeAfter:function(){
+    //   alert('after');
+    // }
+}));
 
         function openInfo(content,e){
             var p = e.target;
