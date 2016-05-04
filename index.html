@@ -4,6 +4,11 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>让百度为莆田事件做点实事吧 - 莆田医院百度地图版</title>
+    <meta name="description" content="">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="cleartype" content="on">
 
     <style type="text/css">
         #mapDiv { height:100%; width:100%; margin:0px }
@@ -7788,8 +7793,8 @@ map.addControl(new BMap.CityListControl({
            var marker = new BMap.Marker(pt);
 
            addClickHandler(geodata.features[i].properties.name,marker);
-           //markers.push(marker);
-           map.addOverlay(marker);   
+           markers.push(marker);
+           //map.addOverlay(marker);   
        }
 
        function addClickHandler(content,marker){
@@ -7798,6 +7803,6 @@ map.addControl(new BMap.CityListControl({
             );
         }
 
-       //var markerClusterer = new BMapLib.MarkerClusterer(map, {markers:markers});
+       var markerClusterer = new BMapLib.MarkerClusterer(map, {markers:markers});
     </script>
 </html>
