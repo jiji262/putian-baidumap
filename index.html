@@ -13,7 +13,7 @@
 
     <style type="text/css">
         #mapDiv { height:95%; width:100%; margin:0px }
-        #github { height:5%; width:100%; margin:0px;text-align:center; }
+        #github { height:5%;color:black;font-weight:bold; width:100%; margin:0px;text-align:center; }
         #github a{ color:green;font-weight:bold;text-decoration:none; }
     </style>
 
@@ -25,7 +25,7 @@
  </head>
   <body>    
     <div id="mapDiv"></div>
-    <div id="github"><a href="https://github.com/jiji262/putian-baidumap">开源代码</a></div>
+    <div id="github">全国莆田医院大全 (<a href="https://github.com/jiji262/putian-baidumap">开源代码</a>)</div>
   </body>
 
    <script type="text/javascript">
@@ -7786,7 +7786,7 @@ map.addControl(new BMap.NavigationControl({anchor: BMAP_ANCHOR_BOTTOM_RIGHT, typ
         function openInfo(content,e){
             var p = e.target;
                 var opts = {
-                    width : 160,     // 信息窗口宽度
+                    width : 120,     // 信息窗口宽度
                     height: 20,     // 信息窗口高度
                     title : "" , // 信息窗口标题
                     enableMessage:true//设置允许信息窗发送短息
