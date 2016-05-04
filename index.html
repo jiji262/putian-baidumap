@@ -7755,7 +7755,12 @@
        var map = new BMap.Map("mapDiv");
        //map.enableScrollWheelZoom();
        var point = new BMap.Point(116.404, 39.915);
-       map.centerAndZoom(point, 6);       
+       map.centerAndZoom(point, 6);      
+       
+       map.enableScrollWheelZoom();
+map.enableInertialDragging();
+
+map.enableContinuousZoom();
        
        
        var size = new BMap.Size(10, 20);
