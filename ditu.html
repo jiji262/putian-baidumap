@@ -7806,18 +7806,22 @@ for (; i < len; i++) {
 var num = 0;
 translateCallback = function (data){
   if(data.status === 0) {
-    for (var j = 0; j < data.points.length; j++) {
+
         //bm.addOverlay(new BMap.Marker(data.points[i]));
         //map.setCenter(data.points[i]);
-        var marker = new BMap.Marker(data.points[j]);
+        // var marker = new BMap.Marker(data.points[0]);
 
-        addClickHandler(geodata.features[j].properties.name,marker);
-        markers.push(marker);
-    }
+        // addClickHandler(geodata.features[num].properties.name,marker);
+        // markers.push(marker);
+
+        geodata.features[num].geometry.coordinates[0] = data.points[0].lng;
+        geodata.features[num].geometry.coordinates[1] = data.points[0].lat;
+
     num++; 
     console.log(num);
                 if(num==len){ //最后的时候执行一次  
-                    var markerClusterer = new BMapLib.MarkerClusterer(map, {markers:markers});
+                    //var markerClusterer = new BMapLib.MarkerClusterer(map, {markers:markers});
+                    console.log(JSON.stringify(geodata));
                 }else{  
                     count(); //循环坐标转换，批量  
                 }  
