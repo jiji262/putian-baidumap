@@ -7799,7 +7799,7 @@ var markers = [];
 var pt = null;
 var i = 0;
      var len = geodata.features.length;
-for (; i < 10; i++) {
+for (; i < 200; i++) {
    pt = new BMap.Point(geodata.features[i].geometry.coordinates[0], geodata.features[i].geometry.coordinates[1]);
    points.push(pt); 
 }
@@ -7808,8 +7808,8 @@ translateCallback = function (data){
   if(data.status === 0) {
     for (var j = 0; j < data.points.length; j++) {
         //bm.addOverlay(new BMap.Marker(data.points[i]));
-        map.setCenter(data.points[i]);
-        var marker = new BMap.Marker(data.points[i]);
+        //map.setCenter(data.points[i]);
+        var marker = new BMap.Marker(data.points[j]);
 
         addClickHandler(geodata.features[j].properties.name,marker);
         markers.push(marker);
