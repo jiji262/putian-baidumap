@@ -7788,7 +7788,7 @@ var points = [new BMap.Point(121.497228,31.373754)];
       if(data.status === 0) {
         for (var i = 0; i < data.points.length; i++) {
             //bm.addOverlay(new BMap.Marker(data.points[i]));
-            bm.setCenter(data.points[i]);
+            map.setCenter(data.points[i]);
             markers.push(new BMap.Marker(data.points[i]));
         }
         var markerClusterer = new BMapLib.MarkerClusterer(map, {markers:markers});
@@ -7799,6 +7799,6 @@ var points = [new BMap.Point(121.497228,31.373754)];
         convertor.translate(points, 1, 5, translateCallback)
     }, 1000);
 
-       var markerClusterer = new BMapLib.MarkerClusterer(map, {markers:markers});
+      // var markerClusterer = new BMapLib.MarkerClusterer(map, {markers:markers});
     </script>
 </html>
