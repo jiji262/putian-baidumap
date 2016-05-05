@@ -7799,27 +7799,35 @@ var markers = [];
 var pt = null;
 var i = 0;
      var len = geodata.features.length;
-for (; i < 10; i++) {
+for (; i < geodata.features.length; i++) {
    pt = new BMap.Point(geodata.features[i].geometry.coordinates[0], geodata.features[i].geometry.coordinates[1]);
-   points.push(pt); 
+   //points.push(pt); 
+   translate(point);
 }
 
-translateCallback = function (data){
-  if(data.status === 0) {
-    for (var j = 0; j < data.points.length; j++) {
-        //bm.addOverlay(new BMap.Marker(data.points[i]));
-        //map.setCenter(data.points[i]);
-        var marker = new BMap.Marker(data.points[j]);
+var markerClusterer = new BMapLib.MarkerClusterer(map, {markers:markers});
 
-        addClickHandler(geodata.features[j].properties.name,marker);
-        markers.push(marker);
+function translate(point){
+    translateCallback = function (data){
+      if(data.status === 0) {
+        for (var j = 0; j < data.points.length; j++) {
+            //bm.addOverlay(new BMap.Marker(data.points[i]));
+            //map.setCenter(data.points[i]);
+            var marker = new BMap.Marker(data.points[j]);
+
+            addClickHandler(geodata.features[j].properties.name,marker);
+            markers.push(marker);
+        }
+        //var markerClusterer = new BMapLib.MarkerClusterer(map, {markers:markers});
+      }
     }
-    var markerClusterer = new BMapLib.MarkerClusterer(map, {markers:markers});
-  }
+    setTimeout(function(){
+        var convertor = new BMap.Convertor();
+        convertor.translate([point], 3, 5, translateCallback)
+    }, 1000); 
+
 }
-setTimeout(function(){
-    var convertor = new BMap.Convertor();
-    convertor.translate(points, 3, 5, translateCallback)
-}, 1000);       
+
+      
     </script>
 </html>
