@@ -7830,7 +7830,7 @@ function count() {
       var oPoints=points[num];  
         // google转化为百度经纬度(参数2，表示是从GCJ-02坐标到百度坐标。参数0，表示是从GPS到百度坐标)  
       var convertor = new BMap.Convertor();
-    convertor.translate(oPoints, 3, 5, translateCallback)
+    convertor.translate([oPoints], 3, 5, translateCallback)
 }  
 
 
