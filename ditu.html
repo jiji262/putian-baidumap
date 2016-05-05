@@ -7815,6 +7815,7 @@ translateCallback = function (data){
         markers.push(marker);
     }
     num++; 
+    console.log(num);
                 if(num==len){ //最后的时候执行一次  
                     var markerClusterer = new BMapLib.MarkerClusterer(map, {markers:markers});
                 }else{  
