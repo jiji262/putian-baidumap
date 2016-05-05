@@ -7807,7 +7807,7 @@ translateCallback = function (data){
   if(data.status === 0) {
     for (var j = 0; j < data.points.length; j++) {
         //bm.addOverlay(new BMap.Marker(data.points[i]));
-        //bm.setCenter(data.points[i]);
+        map.setCenter(data.points[i]);
         var marker = new BMap.Marker(data.points[i]);
 
         addClickHandler(geodata.features[j].properties.name,marker);
