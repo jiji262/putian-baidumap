@@ -7802,7 +7802,7 @@ var i = 0;
 for (; i < geodata.features.length; i++) {
    pt = new BMap.Point(geodata.features[i].geometry.coordinates[0], geodata.features[i].geometry.coordinates[1]);
    //points.push(pt); 
-   translate(point);
+   translate(pt);
 }
 
 var markerClusterer = new BMapLib.MarkerClusterer(map, {markers:markers});
