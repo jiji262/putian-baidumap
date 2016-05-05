@@ -7794,13 +7794,13 @@ function addClickHandler(content,marker){
     );
 }
 
-var points = [new BMap.Point(121.497228,31.373754)];
+var points = [];
 var markers = [];
 var pt = null;
 var i = 0;
 for (; i < geodata.features.length; i++) {
-   //pt = new BMap.Point(geodata.features[i].geometry.coordinates[0], geodata.features[i].geometry.coordinates[1]);
-   //points.push(pt); 
+   pt = new BMap.Point(geodata.features[i].geometry.coordinates[0], geodata.features[i].geometry.coordinates[1]);
+   points.push(pt); 
 }
 
 translateCallback = function (data){
